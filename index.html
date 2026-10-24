@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Digital Studio</title>
+
+    <style>
+        body {
+            background: #0f172a;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            color: #38bdf8;
+        }
+
+        h2 {
+            margin-top: 35px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        nav {
+            margin-bottom: 30px;
+        }
+
+        nav a {
+            color: #38bdf8;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        button {
+            background: #38bdf8;
+            color: #0f172a;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .services {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 25px;
+            width: 220px;
+            box-sizing: border-box;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #38bdf8;
+        }
+
+        .card h3 {
+            color: #38bdf8;
+        }
+
+        .card p {
+            color: #cbd5e1;
+        }
+
+        .card a {
+            text-decoration: none;
+        }
+
+        footer {
+            margin-top: 60px;
+            padding: 20px;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 30px 15px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 8px;
+            }
+
+            .card {
+                width: 100%;
+                max-width: 320px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <h1>Welcome to My Digital Studio</h1>
+    <p>I create websites for businesses.</p>
+    <p>Helping small businesses grow online.</p>
+
+    <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=professorondieki@gmail.com"
+       target="_blank" rel="noopener noreferrer">
+        <button>Hire Me</button>
+    </a>
+
+    <h2 id="about">About Me</h2>
+    <p>I am a beginner web designer creating modern websites for small businesses.</p>
+
+    <h2 id="services">My Services</h2>
+
+    <div class="services">
+        <div class="card">
+            <h3>Website Design</h3>
+            <p>Beautiful websites for small businesses.</p>
+        </div>
+
+        <div class="card">
+            <h3>Business Websites</h3>
+            <p>Professional websites to showcase your business.</p>
+        </div>
+
+        <div class="card">
+            <h3>Website Updates</h3>
+            <p>Improve and update your existing website.</p>
+        </div>
+    </div>
+
+    <h2 id="projects">My Projects</h2>
+
+    <div class="services">
+        <div class="card">
+            <h3>Restaurant Website</h3>
+            <p>A sample restaurant website with a menu and contact details.</p>
+            <a href="restaurant.html" target="_blank">
+                <button>View Demo</button>
+            </a>
+        </div>
+
+        <div class="card">
+            <h3>Clothing Store</h3>
+            <p>A sample concept for displaying clothes and fashion products.</p>
+            <p><strong>Demo concept</strong></p>
+        </div>
+
+        <div class="card">
+            <h3>Personal Portfolio</h3>
+            <p>A sample concept for introducing a person and showcasing their work.</p>
+            <p><strong>Demo concept</strong></p>
+        </div>
+    </div>
+
+    <h2 id="contact">Contact Me</h2>
+    <p>Interested in a website? Get in touch!</p>
+
+    <footer>
+        <p>&copy; 2026 My Digital Studio. All rights reserved.</p>
+        <p>Designed with care by My Digital Studio.</p>
+    </footer>
+</body>
+</html>
