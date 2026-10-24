@@ -3,184 +3,380 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Digital Studio</title>
+    <title>CLIFFNECK RESTAURANT</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            background: #0f172a;
-            color: white;
+            margin: 0;
             font-family: Arial, sans-serif;
+            background: #fffaf0;
+            color: #333;
+        }
+
+        header {
+            background: #542b18;
+            color: white;
+            padding: 25px 15px;
             text-align: center;
-            padding: 50px 20px;
         }
 
-        h1 {
-            color: #38bdf8;
+        header h1 {
+            margin: 0;
+            letter-spacing: 2px;
         }
 
-        h2 {
-            margin-top: 35px;
-        }
-
-        p {
-            line-height: 1.6;
+        header p {
+            margin-bottom: 0;
         }
 
         nav {
-            margin-bottom: 30px;
+            background: #3b1d10;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
         nav a {
-            color: #38bdf8;
+            color: white;
             text-decoration: none;
-            margin: 0 12px;
+            margin: 0 14px;
             font-weight: bold;
         }
 
         nav a:hover {
+            color: #ffc875;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f3dfc1, #e8c59a);
+            padding: 75px 20px;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 38px;
+            color: #542b18;
+            margin-top: 0;
+        }
+
+        .hero p {
+            font-size: 18px;
+        }
+
+        .hero a {
+            display: inline-block;
+            background: #542b18;
             color: white;
-        }
-
-        button {
-            background: #38bdf8;
-            color: #0f172a;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .services {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 25px;
-        }
-
-        .card {
-            background: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 12px;
-            padding: 25px;
-            width: 220px;
-            box-sizing: border-box;
-            transition: transform 0.3s, border-color 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            border-color: #38bdf8;
-        }
-
-        .card h3 {
-            color: #38bdf8;
-        }
-
-        .card p {
-            color: #cbd5e1;
-        }
-
-        .card a {
+            padding: 12px 22px;
+            border-radius: 25px;
             text-decoration: none;
         }
 
+        .menu {
+            padding: 45px 20px;
+            text-align: center;
+        }
+
+        .menu h2 {
+            color: #542b18;
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+
+        .food-container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            flex-wrap: wrap;
+            gap: 22px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .food {
+            background: white;
+            width: 280px;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 4px 14px #00000015;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .food:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 22px #00000025;
+        }
+
+        .food-image {
+            width: 100%;
+            height: 185px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .food h3 {
+            color: #8b4513;
+            margin: 18px 10px 8px;
+        }
+
+        .food p {
+            padding: 0 12px;
+            line-height: 1.5;
+        }
+
+        .food strong {
+            color: #237a3b;
+            font-size: 18px;
+        }
+
+        .order-button,
+        .whatsapp-button {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 12px 18px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            margin: 10px 0 20px;
+            transition: 0.3s;
+        }
+
+        .order-button:hover,
+        .whatsapp-button:hover {
+            background: #128C7E;
+            transform: scale(1.05);
+        }
+
+        .contact {
+            background: #f3dfc1;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .contact h2 {
+            color: #542b18;
+        }
+
         footer {
-            margin-top: 60px;
-            padding: 20px;
-            border-top: 1px solid #334155;
-            color: #94a3b8;
-            font-size: 14px;
+            background: #542b18;
+            color: white;
+            text-align: center;
+            padding: 18px;
         }
 
         @media (max-width: 600px) {
-            body {
-                padding: 30px 15px;
+            header h1 {
+                font-size: 25px;
+            }
+
+            .hero h2 {
+                font-size: 29px;
+            }
+
+            .food {
+                width: 100%;
+                max-width: 340px;
             }
 
             nav a {
                 display: inline-block;
-                margin: 8px;
-            }
-
-            .card {
-                width: 100%;
-                max-width: 320px;
+                margin: 7px;
             }
         }
     </style>
 </head>
 
 <body>
+
+    <header>
+        <h1>CLIFFNECK RESTAURANT</h1>
+        <p>Fresh Food, Happy Moments!</p>
+    </header>
+
     <nav>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
+        <a href="#home">Home</a>
+        <a href="#menu">Our Menu</a>
         <a href="#contact">Contact</a>
     </nav>
 
-    <h1>Welcome to My Digital Studio</h1>
-    <p>I create websites for businesses.</p>
-    <p>Helping small businesses grow online.</p>
+    <section class="hero" id="home">
+        <h2>Welcome to CLIFFNECK RESTAURANT</h2>
+        <p>Enjoy delicious meals made with care.</p>
+        <a href="#menu">Explore Our Menu</a>
+    </section>
 
-    <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=professorondieki@gmail.com"
-       target="_blank" rel="noopener noreferrer">
-        <button>Hire Me</button>
-    </a>
+    <section class="menu" id="menu">
+        <h2>Our Food &amp; Drinks Menu</h2>
 
-    <h2 id="about">About Me</h2>
-    <p>I am a beginner web designer creating modern websites for small businesses.</p>
+        <div class="food-container">
 
-    <h2 id="services">My Services</h2>
+            <div class="food">
+                <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=600"
+                     alt="Chicken and chips" class="food-image">
+                <h3>Chicken &amp; Chips</h3>
+                <p>Crispy chicken served with golden chips.</p>
+                <p><strong>KSh 650</strong></p>
+                <a class="order-button" href="https://wa.me/254141324469?text=Hello%20CLIFFNECK%20RESTAURANT%2C%20I%20want%20to%20order%20Chicken%20and%20Chips%20-%20KSh%20650" target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
+            </div>
 
-    <div class="services">
-        <div class="card">
-            <h3>Website Design</h3>
-            <p>Beautiful websites for small businesses.</p>
+            <div class="food">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600"
+                     alt="Beef burger" class="food-image">
+                <h3>Beef Burger</h3>
+                <p>A juicy burger with fresh toppings.</p>
+                <p><strong>KSh 450</strong></p>
+                <a class="order-button" href="https://wa.me/254141324469?text=Hello%20CLIFFNECK%20RESTAURANT%2C%20I%20want%20to%20order%20Beef%20Burger%20-%20KSh%20450" target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
+            </div>
+
+            <div class="food">
+                <img src="https://images.unsplash.com/photo-1613478223719-2ab802602423?w=600"
+                     alt="Fresh fruit juice" class="food-image">
+                <h3>Fresh Juice</h3>
+                <p>A refreshing fruit drink served chilled.</p>
+                <p><strong>KSh 200</strong></p>
+                <a class="order-button" href="https://wa.me/254141324469?text=Hello%20CLIFFNECK%20RESTAURANT%2C%20I%20want%20to%20order%20Fresh%20Juice%20-%20KSh%20200" target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
+            </div>
+
+            <div class="food">
+                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600"
+                     alt="Pizza" class="food-image">
+                <h3>Delicious Pizza</h3>
+                <p>Pizza topped with cheese and tasty ingredients.</p>
+                <p><strong>KSh 800</strong></p>
+                <a class="order-button" href="https://wa.me/254141324469?text=Hello%20CLIFFNECK%20RESTAURANT%2C%20I%20want%20to%20order%20Pizza%20-%20KSh%20800" target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
+            </div>
+
+            <div class="food">
+                <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=600"
+                     alt="Italian pasta" class="food-image">
+                <h3>Italian Pasta</h3>
+                <p>Pasta served with a rich, tasty sauce.</p>
+                <p><strong>KSh 550</strong></p>
+                <a class="order-button" href="https://wa.me/254141324469?text=Hello%20CLIFFNECK%20RESTAURANT%2C%20I%20want%20to%20order%20Italian%20Pasta%20-%20KSh%20550" target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
+            </div>
+
+            <div class="food">
+                <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=600"
+                     alt="Cheese burger" class="food-image">
+                <h3>Cheese Burger</h3>
+                <p>A burger with cheese and fresh vegetables.</p>
+                <p><strong>KSh 500</strong></p>
+                <a class="order-button" href="https://wa.me/254141324469?text=Hello%20CLIFFNECK%20RESTAURANT%2C%20I%20want%20to%20order%20Cheese%20Burger%20-%20KSh%20500" target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
+            </div>
+
+            <div class="food">
+                <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=600"
+                     alt="French fries" class="food-image">
+                <h3>French Fries</h3>
+                <p>Hot, crispy and golden potato fries.</p>
+                <p><strong>KSh 200</strong></p>
+                <a class="order-button" href="https://wa.me/254141324469?text=Hello%20CLIFFNECK%20RESTAURANT%2C%20I%20want%20to%20order%20French%20Fries%20-%20KSh%20200" target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
+            </div>
+
+            <div class="food">
+                <img src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=600"
+                     alt="Chicken wings" class="food-image">
+                <h3>Chicken Wings</h3>
+                <p>Tasty chicken wings with a delicious coating.</p>
+                <p><strong>KSh 400</strong></p>
+                <a class="order-button" href="https://wa.me/254141324469?text=Hello%20CLIFFNECK%20RESTAURANT%2C%20I%20want%20to%20order%20Chicken%20Wings%20-%20KSh%20400" target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
+            </div>
+
+            <div class="food">
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600"
+                     alt="Fresh salad" class="food-image">
+                <h3>Fresh Salad</h3>
+                <p>A fresh mix of vegetables for a light meal.</p>
+                <p><strong>KSh 300</strong></p>
+                <a class="order-button" href="https://wa.me/254141324469?text=Hello%20CLIFFNECK%20RESTAURANT%2C%20I%20want%20to%20order%20Fresh%20Salad%20-%20KSh%20300" target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
+            </div>
+
+            <div class="food">
+                <img src="https://images.unsplash.com/photo-1513558161293-cdaf765edfd7?w=600"
+                     alt="Fresh lemonade" class="food-image">
+                <h3>Fresh Lemonade</h3>
+                <p>A cool and refreshing lemon drink.</p>
+                <p><strong>KSh 180</strong></p>
+                <a class="order-button" href="https://wa.me/254141324469?text=Hello%20CLIFFNECK%20RESTAURANT%2C%20I%20want%20to%20order%20Fresh%20Lemonade%20-%20KSh%20180" target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
+            </div>
+
+            <div class="food">
+                <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600"
+                     alt="Iced coffee" class="food-image">
+                <h3>Iced Coffee</h3>
+                <p>Chilled coffee for a refreshing break.</p>
+                <p><strong>KSh 250</strong></p>
+                <a class="order-button" href="https://wa.me/254141324469?text=Hello%20CLIFFNECK%20RESTAURANT%2C%20I%20want%20to%20order%20Iced%20Coffee%20-%20KSh%20250" target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
+            </div>
+
+            <div class="food">
+                <img src="https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?w=600"
+                     alt="Fruit salad" class="food-image">
+                <h3>Fruit Salad</h3>
+                <p>A colourful bowl of fresh seasonal fruits.</p>
+                <p><strong>KSh 250</strong></p>
+                <a class="order-button" href="https://wa.me/254141324469?text=Hello%20CLIFFNECK%20RESTAURANT%2C%20I%20want%20to%20order%20Fruit%20Salad%20-%20KSh%20250" target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
+            </div>
+
+            <div class="food">
+                <img src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?w=600"
+                     alt="Vegetable bowl" class="food-image">
+                <h3>Vegetable Bowl</h3>
+                <p>A tasty mix of freshly prepared vegetables.</p>
+                <p><strong>KSh 350</strong></p>
+                <a class="order-button" href="https://wa.me/254141324469?text=Hello%20CLIFFNECK%20RESTAURANT%2C%20I%20want%20to%20order%20Vegetable%20Bowl%20-%20KSh%20350" target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
+            </div>
+
+            <div class="food">
+                <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600"
+                     alt="Fresh soup" class="food-image">
+                <h3>Fresh Soup</h3>
+                <p>A warm and comforting bowl of soup.</p>
+                <p><strong>KSh 250</strong></p>
+                <a class="order-button" href="https://wa.me/254141324469?text=Hello%20CLIFFNECK%20RESTAURANT%2C%20I%20want%20to%20order%20Fresh%20Soup%20-%20KSh%20250" target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
+            </div>
+
+            <div class="food">
+                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600"
+                     alt="Fresh pastries" class="food-image">
+                <h3>Fresh Pastries</h3>
+                <p>Delicious baked treats for your snack time.</p>
+                <p><strong>KSh 150</strong></p>
+                <a class="order-button" href="https://wa.me/254141324469?text=Hello%20CLIFFNECK%20RESTAURANT%2C%20I%20want%20to%20order%20Fresh%20Pastries%20-%20KSh%20150" target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
+            </div>
+
         </div>
+    </section>
 
-        <div class="card">
-            <h3>Business Websites</h3>
-            <p>Professional websites to showcase your business.</p>
-        </div>
+    <section class="contact" id="contact">
+        <h2>Visit Us</h2>
+        <p>Come and enjoy a delicious meal!</p>
+        <p>Contact: 0141324469</p>
 
-        <div class="card">
-            <h3>Website Updates</h3>
-            <p>Improve and update your existing website.</p>
-        </div>
-    </div>
+        <a class="whatsapp-button"
+           href="https://wa.me/254141324469?text=Hello%20CLIFFNECK%20RESTAURANT"
+           target="_blank"
+           rel="noopener noreferrer">
+            Chat with us on WhatsApp
+        </a>
 
-    <h2 id="projects">My Projects</h2>
-
-    <div class="services">
-        <div class="card">
-            <h3>Restaurant Website</h3>
-            <p>A sample restaurant website with a menu and contact details.</p>
-            <a href="restaurant.html" target="_blank">
-                <button>View Demo</button>
-            </a>
-        </div>
-
-        <div class="card">
-            <h3>Clothing Store</h3>
-            <p>A sample concept for displaying clothes and fashion products.</p>
-            <p><strong>Demo concept</strong></p>
-        </div>
-
-        <div class="card">
-            <h3>Personal Portfolio</h3>
-            <p>A sample concept for introducing a person and showcasing their work.</p>
-            <p><strong>Demo concept</strong></p>
-        </div>
-    </div>
-
-    <h2 id="contact">Contact Me</h2>
-    <p>Interested in a website? Get in touch!</p>
+        <p><em>Sample restaurant website for demonstration.</em></p>
+    </section>
 
     <footer>
-        <p>&copy; 2026 My Digital Studio. All rights reserved.</p>
-        <p>Designed with care by My Digital Studio.</p>
+        <p>&copy; 2026 CLIFFNECK RESTAURANT</p>
     </footer>
+
 </body>
 </html>
